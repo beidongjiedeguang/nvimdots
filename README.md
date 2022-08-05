@@ -1,44 +1,38 @@
-# Introduction
+安装 neovim:
+```
+sudo apt-get install software-properties-common
+sudo add-apt-repository ppa:neovim-ppa/stable
+sudo apt-get update
+sudo apt-get install neovim
 
-![Dashboard](https://raw.githubusercontent.com/ayamir/blog-imgs/main/dashboard.png)
+#pip install neovim
+```
 
-![Telescope](https://raw.githubusercontent.com/ayamir/blog-imgs/main/telescope.png)
+终端字体需要使用Nerd Font或者其他有icon字体补丁的font：
+https://www.nerdfonts.com/
 
-![Coding](https://raw.githubusercontent.com/ayamir/blog-imgs/main/coding.png)
+此外还需要安装ripgrep和fd来配合插件的快速搜索：
+```
+sudo apt install ripgrep fd-find
 
-![Debuging](https://raw.githubusercontent.com/ayamir/blog-imgs/main/dap.png)
+```
 
-![Gitui](https://raw.githubusercontent.com/ayamir/blog-imgs/main/gitui.png)
+配置文件:
+```
+git clone --depth=1 https://github.com/beidongjiedeguang/nvimdots.git ~/.config/nvim/
+# git clone --depth=1 git@github.com:beidongjiedeguang/nvimdots.git ~/.config/vim/
 
-This is my neovim's configuration, which contains two branches.
+```
+首次打开nvim, 如果插件clone失败， 使用下面
+```
+nvim +PackerSync 
+```
+需要记住的一点是使用`PackerSync`命令才能让你对插件相关的config的修改生效（对config.lua和plugins.lua文件的修改，修改其他文件不需要）
 
-I use [packer.nvim](https://github.com/wbthomason/packer.nvim) to manage plugins.
+切换到coc配置（如果想要的话）
+```
+cd ~/.config/nvim
+# git switch coc
 
-| Branch |   Completion Solution   |
-| :----: | :---------------------: |
-|  main  | nvim-lspconfig+nvim-cmp |
-|  coc   |        coc.nvim         |
+# 一些插件clone失败后，可以退出重新进入，并使用命令
 
-Chinese introduction is [here](https://zhuanlan.zhihu.com/p/382092667).
-
-**Pros**:
-
--   Fast. Less than **50ms** to start(Depends on SSD, tested on Sumsung 970 evo).
--   Simple. Run out of the box.
--   Modern. Pure lua to config.
--   Modular. Easy to customize.
--   Powerful. Full functionality to code.
-
-![startup time](https://raw.githubusercontent.com/ayamir/blog-imgs/main/startuptime.png)
-
-![vim-startuptime](https://raw.githubusercontent.com/ayamir/blog-imgs/main/vimstartup.png)
-
-(Tested with [rhysd/vim-startuptime](https://github.com/rhysd/vim-startuptime))
-
-# Details
-
-Please refer to [wiki](https://github.com/ayamir/nvimdots/wiki).
-
-# Acknowledgement
-
--   [glepnir/nvim](https://github.com/glepnir/nvim)
