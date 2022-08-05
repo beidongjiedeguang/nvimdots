@@ -29,10 +29,3 @@ nvim +PackerSync
 ```
 需要记住的一点是使用`PackerSync`命令才能让你对插件相关的config的修改生效（对config.lua和plugins.lua文件的修改，修改其他文件不需要）
 
-切换到coc配置（如果想要的话）
-```
-cd ~/.config/nvim
-# git switch coc
-
-# 一些插件clone失败后，可以退出重新进入，并使用命令
-
